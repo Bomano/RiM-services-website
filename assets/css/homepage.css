@@ -11,3 +11,33 @@
  background-color: black;
  margin: 6px 0;
 }
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+section{
+    margin-bottom: 40px;
+}
+.Home, .join-team{
+    
+}
+.parent-services {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+.service{
+    padding: 70px;
+    /*background-color: #dbeafe;*/
+    justify-items: flex-end;
+    text-align: justify;
+    border-radius: 8px;
+    width: 200px;
+    height: 200px;
+    background-color: brown;
+}

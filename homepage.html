@@ -7,15 +7,26 @@
     <link rel="stylesheet" href="assets/css/homepage.css  ">
 </head>
 <body>
-    <header>
+    <!--Website navigation bar-->
+    <header class="navbar">
+        <nav>
         <img src="img/Screenshot 2026-10-17 145655.png" alt="business-logo">
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open nav menu" aria-expanded="false" aria-controls="nav-menu"
+        >
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
         <div class="hamburger">
-            <div><a href="#Home">Home</a></div>
-            <div><a href="#Our-services">Our Services</a></div>
-            <div><a href="Contact.html ">Contact Us</a></div>
-            <div><a href="#Join-Our-Team">Join Our Team</a></div>
-            </div>
+            <a href="#Home">Home</a>
+            <a href="#Our-services">Our Services</a>
+            <a href="Contact.html ">Contact Us</a>
+            <a href="#Join-Our-Team">Join Our Team</a>
+            
+        </nav> 
     </header>
+    <!--Main Website Content-->
+    <main>
     <section id="Home">
         <h1>RiM Services</h1>
         <p>
@@ -33,7 +44,7 @@
     </section>
     <section id="Our-services">
         <h2>Our Services</h2>
-        <div class="services">
+        <div class="parent-services">
             <div class="service">
                 <h4>Service 1</h4>
                 <p>Description of Service 1</p>
@@ -66,7 +77,7 @@
         <p> Discover how our expertise translates into practical 
                solutions and meaningful outcomes</p>
     </section>
-
+<!--center-focused image carousel-->
     <section id="Team">
         <h2>Meet Our Team</h2>
         <div class="team-pics">
@@ -109,10 +120,11 @@
                 <input type="text" id="Expertise" name="Expertise" required>
                 <label for="upload file">Upload CV </label>
                 <input type="file" id="upload file" name="upload file" required>
-                <input type="submit" value="Submit">
+                <input type="button" value="Submit">
             </form>
          </div>
     </section>
+    </main>
     <footer>
         <div class="logo1"><img src="img/Screenshot 2026-10-17 145655.png" alt="business-logo"> </div>
 
