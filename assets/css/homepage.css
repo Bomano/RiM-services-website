@@ -2,42 +2,366 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+    /*display: flex;
+    flex-direction: column;*/
 }
+.header{
+    height: max-content;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    padding: 10px 20px;
+
+}
+.navbar .hamburger{
+flex-direction: column;
+}
+/* Hamburger Menu
 .hamburger div {
  width: 35px;
  height: 5px;
- background-color: black;
+ background-color: black
  margin: 6px 0;
-}
-main{
+} */
+/*main{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+}*/
 section{
     margin-bottom: 40px;
 }
-.Home, .join-team{
-    
+
+        /*About section*/
+.about { padding: 40px 20px; background-color: #f9fafb;border-radius: 8px;display: flex; flex-direction: column; align-items: center; text-align: center; font-family: Arial, sans-serif;}
+.about h1 {
+    margin-bottom: 20px; font-size: 40px; font-weight: bold; font-family: Arial, Helvetica, sans-serif;}
+.about p{margin-bottom: 30px; font-family: Arial, sans-serif; }
+.company-values h3{font-size: medium;
 }
-.parent-services {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    width: 100%;
-    margin: 0 auto;
-}
+.company-values ul {list-style-type: none; margin: 0 auto; text-align: center;}
+.company-values ul li{margin-bottom: 40px; line-height: 1.6;}
+
+                /*Services section*/
+.services h2{display: flex; justify-content: center; align-items: center; margin-bottom: 50px;}
+.services .parent-services {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); /*grid-template-rows: repeat(2, minmax(0, 1fr));*/ gap: 20px; width: 100%; margin: 0 auto; max-width: 1200px;}
 .service{
     padding: 70px;
     /*background-color: #dbeafe;*/
     justify-items: flex-end;
     text-align: justify;
     border-radius: 8px;
-    width: 200px;
-    height: 200px;
     background-color: brown;
+    width: 100%;
+    min-height: 200px;
+    padding: 30px;
 }
+
+
+/* Our Work section */
+.work {
+    padding: 40px 20px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Team Caroussel Section */
+.team-pics {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.team-pics div {
+    text-align: center;
+}
+.gallery {
+    text-align: center;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.gallery h4 {
+    margin-bottom: 10px;
+}
+.gallery p {
+    margin-bottom: 35px;
+    color: #64748b;
+}
+.carousel {
+    position: relative;
+    max-width: 1100px;
+    width: 100%;
+    margin: auto;
+}
+.carousel-window {
+    width: 100%;
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    transition: transform 0.6s ease;
+}
+/* Circular image frames */
+.slide {
+    flex: 0 0 260px;
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    opacity: 0.55;
+    transform: scale(0.78);
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease,
+        box-shadow 0.6s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Highlight the center image */
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 8px 30px rgba(23, 37, 84, 0.25);
+    outline: 4px solid white;
+    outline-offset: -4px;
+}
+
+.arrow {
+    position: absolute;
+    z-index: 5;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #172554;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.arrow:hover {
+    background: #172554;
+    color: white;
+}
+
+.prev {
+    left: 12px;
+}
+
+.next {
+    right: 12px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border: none;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #172554;
+    transform: scale(1.3);
+}
+
+/* Responsive sizing */
+@media (max-width: 600px) {
+    .slide {
+        flex-basis: 190px;
+        width: 190px;
+        height: 190px;
+    }
+
+    .carousel-track {
+        gap: 16px;
+    }
+
+    .arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+}
+      /* Team section */
+.team  h2{
+    padding: 40px 20px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* why section */
+.form {
+    padding: 40px 20px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    display:inline-block;
+    flex-direction: column;
+    
+}
+
+.join-team{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.join-team h3{
+    font-size: larger;
+    margin-bottom: 20px;
+}
+.join-team p{
+    font-size: large;
+    color: black;
+    margin-bottom: 50px;
+}
+
+
+/* Join Our Team section */
+
+.form {
+    padding: 60px 20px;
+    background-color: #273b4f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* White form card */
+.form {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 35px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.025);
+}
+
+/* Form heading */
+.form h2 {
+    margin-bottom: 10px;
+    color: #172554;
+    font-size: 30px;
+    text-align: center;
+}
+
+.form-intro {
+    margin-bottom: 25px;
+    color: #64748b;
+    text-align: center;
+}
+
+/* Stack labels above inputs */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #334155;
+}
+
+/* Text and email fields */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+/* CV upload field */
+.form-group input[type="file"] {
+    width: 100%;
+    font: inherit;
+}
+
+/* Submit button */
+.submit-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #172554;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #2563eb;
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+    .form {
+        padding: 22px;
+    }
+
+    .form h2 {
+        font-size: 25px;
+    }
+}
+
+/*footer section*/
+footer{ background-color: black; color: white; padding: 20px 0;}
+.communication{display: flex; flex-direction: row; justify-content: space-around; align-items: center; gap: 10px;}
+.socials,.links,.logo1{flex: 1; padding: 25px 20px 20px; text-align: left; box-sizing: border-box;}
+.socials ul{list-style-type: none;color: antiquewhite;}
+.socials ul li a { font-family: Arial, Helvetica, sans-serif; text-decoration: none; color: antiquewhite; cursor: pointer;}
+.links ul{list-style-type: none;color: antiquewhite;}
+.links ul li a{text-decoration: none;color: antiquewhite;cursor: pointer;}
+.logo1{height: 5px;width: 5px;display: flex;justify-content: left;}
+.copyright{margin: 0 auto;display: flex;justify-content: center;}
